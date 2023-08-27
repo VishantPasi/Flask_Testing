@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <title>Admin Panel</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='/assets/imgs/favicon.ico')}}" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='/assets/favicon.ico')}}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/dash.css')}}"  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+
+  
+</head>
+<body>
+    
+
+<div class="container">
+  
+  
+  <table class="table" style="border: 2px solid white;">
+    
+    <thead>
+      
+      <tr>
+        
+          <th>#</th>
+          
+          <th>Product Name</th>
+          <th>Product Id</th>
+          <th>Product Price ( ₹ )</th>
+          <th>Product Quantity</th>
+          <th>Product Weight</th>
+          
+          <th>Edit</th>
+          <th>Delete</th>
+          <th><div class="d-flex justify-content-end mb-4" ><a class="btn btn-primary text-uppercase" id="print_rec" href="/Bill">Generate Bill</a></div></th>
+          <!-- <th><div class="d-flex justify-content-end mb-4" id="insert_but"><a class="btn btn-primary text-uppercase" href="/edit_u/0"><i class="fa-solid fa-plus fa-xl"></i> ADD</a></div></th> -->
+          
+          <th><div class="d-flex justify-content-end mb-4" id="log_but"><a class="btn btn-primary text-uppercase" href="/logout">Logout</a></div></th>
+
+      </tr>
+    </thead>
+  
+    <tbody>
+        {% for field in purchase %}
+      <tr>
+        <td>{{field.sno}}</td>
+        
+        <td id="prod_table_data">{{field.product_name}}</td>
+        <td>{{field.product_id}}</td>
+   
+        <td>{{field.product_mrp_final}}</td>
+       
+        
+        <td>{{field.product_quant}}</td>
+        <td>{{field.product_weight_final}} g</td>
+        
+        
+        <td><a href="/edit_u/{{field.sno}}"><i class="fa-solid fa-pen fa-xl" id="edit_but"><button></button></i></a></td>
+        <td><a href="/delete_u/{{field.sno}}"><i class="fa-regular fa-trash-can fa-xl" id="del_but"><button></button></i></a></td>
+        <td></td>
+        <td></td>
+        
+        
+      </tr>
+      {% endfor %}
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+
+      </tr>
+      
+      <tr class="tot1">
+        <td></td>
+        <td><form action="/0" method="POST">
+          <input type="text" name="prod_id" id="pro_scan_id" autofocus>
+        </form></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        {%set qu =  purchase | sum(attribute='product_quant')%}
+        {%set pur =  purchase | sum(attribute='product_mrp_final')%}
+        {%set wei = purchase | sum(attribute='product_weight_final')%}
+        <td class="tot">Total Weight: {{wei}} g </td>
+        <td class="tot">Total quantity: {{qu}}</td>
+        <td class="tot">Total ( ₹ ) : {{pur}}     </td>
+       
+       
+      </tr>
+      
+     
+    
+   
+  </table>
+  
+  
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+    text-align:center ;
+    color: white;
+    
+}
+#print_but{
+   background-color: red;
+position: fixed;
+top: 40px;
+right: 90px;
+
+}
+
+th{
+    padding:2px;
+    border:2px solid white;
+}
+td{
+    
+        padding:5px;
+        border:1px solid white;
+
+}

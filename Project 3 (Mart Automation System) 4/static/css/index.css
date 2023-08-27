@@ -1,0 +1,138 @@
+html{
+
+    background: radial-gradient(circle at -8.9% 50%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+    height: 100vh;
+}
+body{
+    margin: 0;
+    padding: 0;
+   
+  
+    
+    font-family: sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+@media screen and (max-width: 600px){
+body{background-size: cover; 
+    
+}
+}
+        
+#particles-js{
+    height: 100%
+}
+.loginBox{
+    
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.151);
+    border: 2px solid rgba(240, 240, 240, 0.205);
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+    
+}
+.user{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    
+    border-radius: 100%;
+}
+h3{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #5cb85c;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+.loginBox input{
+    width: 100%;
+    margin-bottom: 20px
+}
+#uname,#pass{
+    border: none;
+   
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    color: #5cb85c;
+    background:#4e4e4e33;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+::placeholder{
+    color: rgba(255, 255, 255, 0.774);
+    position: fixed;
+    left: 70px;
+}
+/* #uname:hover, #pass:hover{
+} */
+
+
+#uname:focus,#pass:focus{
+    box-shadow: 0px 0px 4px 0px #5cb85c;
+    background-color: #00000046;
+    
+}
+
+.inputBox{
+    position: relative;
+    
+}
+.inputBox span{
+    position: absolute;
+    top: 10px;
+    color: #262626
+}
+#submit{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+    background: #5cb85c9a;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.233);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+#submit:hover{
+    background: #5cb85c;
+    color: rgb(34, 31, 31);
+    border: 2px solid rgba(0, 0, 0, 0.336);
+}
+.loginBox a{
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block
+}
+
+.sign_up a{
+    color: #5cb85c;
+    font-family:'Times New Roman', Times, serif 
+    
+}
+.sign_up{
+    color: #fccb2c;
+    font-family: 'Roboto Slab', serif;
+}
+
+.sign_up a:hover{
+    text-decoration: underline;
+}

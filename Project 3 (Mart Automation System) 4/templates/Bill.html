@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/dash.css')}}"  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bill.css')}}"  />
+</head>
+<body>
+    <h1>BasCart</h1>
+    <form action="/printbill" method="post">
+        <div class="d-flex justify-content-end mb-4" ><a class="btn btn-primary text-uppercase" id="print_but" href="/printbill">Print Bill</a></div>
+    </form>
+    <h2>Invoice</h2>
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------
+    <br>
+   
+    <table border=1 align="center" cellspacing="0" >
+        
+        <tr>
+            <th>Bill No.</th>
+            <th>Bill Date</th>
+        </tr>
+        <tr>
+            <td>403702001-0012B0</td>
+            <td>{{date}}</td>
+        </tr>
+        
+        
+    </table>
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<br>
+    <table border="1" align="center" cellspacing="0">
+    <tr>
+        <th>Product id</th>
+        <th>Particulars</th>
+        <th>Quantity</th>
+        <th>N/Rate</th>
+        <th>Value</th>
+    </tr>
+    {%for field in purchase%}
+    <tr>
+        
+        <td>{{field.product_id}}</td>
+        <td>{{field.product_name}}</td>
+        <td>{{field.product_quant}}</td>
+        <td>{{field.product_mrp}}</td>
+        <td>{{field.product_mrp_final}}</td>
+        
+    </tr>
+    {% endfor %}
+    <tr>
+        
+        <td>Items: {{purchase|selectattr('product_id')|list|length}}</td>
+        
+        <td></td>
+        <td>Qty: {{purchase | sum("product_quant")}}</td>
+        <td></td>
+        <td>Total: {{purchase | sum("product_mrp_final")}}</td>
+        
+    </tr>
+   </table>
+   <br>
+   =========================================================================================
+   <br>
+   <br>
+   *-------------------------------------------Amount Received From Customer-------------------------------------------*
+   <br>
+   <br>
+   <div class="final">
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Cash: <input type="number" name="cash" id="cash"><br><br>
+    Balance Paid in cash: <input type="number" name="balance" id="balance">
+   </div>
+   <br>
+   =========================================================================================
+
+   <h3>This is Computer Generated Invoice</h3>
+   
+   
+</body>
+</html>

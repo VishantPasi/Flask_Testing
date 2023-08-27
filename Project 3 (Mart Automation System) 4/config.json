@@ -1,0 +1,14 @@
+{
+"params":{
+"local_server":true,
+"local_uri":"mysql://root:@localhost/Purchase",
+"prod_uri":"mysql://root:@localhost/Purchase",
+"title":"Login Panel",
+"user_name":"admin",
+"user_pass":"admin",
+"nor_user":"vish",
+"nor_pass":"vish"
+}
+
+
+}

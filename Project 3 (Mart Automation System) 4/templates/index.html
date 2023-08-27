@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{params['title']}}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='/assets/imgs/favicon.ico')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+</head>
+<body>
+    
+    <div class="loginBox"> <img class="user" src="{{url_for('static',filename='/assets/imgs/user_icon.png')}}" height="100px" width="100px">
+        <h3>SIGN IN</h3>
+        <form action="/veri" name="myform" method="POST">
+            <div class="inputBox"> 
+                <input id="uname" type="text" name="Username"  placeholder="Username"> 
+                <input id="pass" type="password" name="Password" placeholder="Password"> 
+            </div> 
+                <center><input type="submit" id="submit" value="LOGIN"></center>
+        </form> 
+        <div class="text-center">
+            <div class="sign_up">Don't have a account?<a href="/signup">Sign Up</a></div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body{
+    /* fallback for old browsers */
+    background: #1168cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #2E3192, #1BFFFF);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right,#614385 , #516395);
+    color:rgb(0, 0, 0);
+    
+    }
+th{
+    background-color: rgba(255, 255, 255, 0.356);
+    color:rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+}
+tr{
+    background-color: rgba(255, 255, 255, 0.199);
+    color:rgb(0, 0, 0);
+}
+td{
+    font-family: 'Urbanist', sans-serif;
+    text-align: center;
+}
+
+#edit_but,#del_but,#barcode_but{
+    color: #473161;
+}
+#edit_but:hover,#del_but:hover,#barcode_but:hover{
+    color: #ffffff;
+}
+
+.container #insert_but{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#prod_table_data{
+    text-align: left;
+}
+.tot{
+    background-color: #0b468a;
+    color: white;
+    border: 2px solid white;
+}
+.tot1{
+    
+    color: white;
+    border: 2px solid white;
+}
+#pro_scan_id{
+    background-color: #0b468ac5;
+    border: 2px solid white;
+    position: relative;
+    top:8px;
+    border-radius: 8px;
+    outline: none;
+    height: 40px;
+    
+    
+}
+#print_rec{
+    background-color: rgb(247, 66, 66);
+}
+#print_rec:hover{
+    background-color: rgb(253, 29, 29);
+}
